@@ -14,7 +14,7 @@ const Section: FC<{ children: JSX.Element | JSX.Element[]; delay: number }> = ({
     <StyledDiv
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition="ease-in"
+      style={{ transitionDuration: '1s', transitionDelay: `${delay}` }}
       mb={6}
     >
       {children}
