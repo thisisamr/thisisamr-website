@@ -51,7 +51,7 @@ const Nav: FC<{ path: string }> = props => {
 
   return (
     <Box
-      position="sticky"
+      position="fixed"
       as="nav"
       h={75}
       w="100%"
