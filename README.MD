@@ -5,6 +5,7 @@
 ## Stack
 
 - Nextjs
+- TypeScript
 - Chackra UI
 - Framer Motion (An animation Library for React)
 
