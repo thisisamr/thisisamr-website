@@ -90,7 +90,7 @@ const Nav: FC<{ path: string }> = props => {
           </LinkItem>
           <LinkItem
             target="_blank"
-            href="https://github.com/craftzdog/craftzdog-homepage"
+            href="https://github.com/thisisamr/thisisamr-website"
             path={path}
             style={{
               gap: 4,
@@ -125,7 +125,7 @@ const Nav: FC<{ path: string }> = props => {
                 </NextLink>
                 <MenuItem
                   as={Link}
-                  href="https://github.com/craftzdog/craftzdog-homepage"
+                  href="https://github.com/thisisamr/thisisamr-website"
                 >
                   View Source
                 </MenuItem>
