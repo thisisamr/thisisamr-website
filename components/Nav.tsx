@@ -1,24 +1,22 @@
-import Logo from './Logo'
 import NextLink from 'next/link'
 import { IoLogoGithub } from 'react-icons/io5'
+import Logo from './Logo'
 
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {
-  Container,
   Box,
-  Link,
-  Stack,
-  Heading,
+  Container,
   Flex,
+  Heading,
+  IconButton,
+  Link,
   Menu,
+  MenuButton,
   MenuItem,
   MenuList,
-  MenuIcon,
-  IconButton,
-  MenuButton,
-  useColorMode,
+  Stack,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
 import React, { FC } from 'react'
 import { Url } from 'url'
 import ThemeToggleButton from './ThemeButton'

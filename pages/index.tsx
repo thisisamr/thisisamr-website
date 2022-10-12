@@ -26,7 +26,7 @@ const Home = () => {
         mt={10}
         textAlign="center"
       >
-        Hello I'm a full stack developer based in cairo,Egypt!
+        Hello I&aposm a full stack developer based in cairo,Egypt!
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
@@ -103,13 +103,13 @@ const Home = () => {
           <span>Academia days 💪</span>
           <VStack>
             <ChackraSpan fontSize={'sm'} color="gray.500">
-              "i'm extremetly passionate about teaching and communicating with
-              others.At the end of the day you feel like you have added value,
-              which feels awesome 🤗"
+              &quot;i&apos;m extremetly passionate about teaching and
+              communicating with others.At the end of the day you feel like you
+              have added value, which feels awesome 🤗&quot;
             </ChackraSpan>
             <span>
               Assistant Lecturer in Transportation Engineering,remote Sensing
-              and geomatics'
+              and geomatics.
             </span>
           </VStack>
         </BioSection>

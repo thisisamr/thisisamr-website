@@ -1,11 +1,11 @@
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import { WorkGridItem } from '../components/GridItem'
 import Section from '../components/Section'
 import Disney from '../public/works/disney.jpg'
 import Hulu from '../public/works/hulu_2.jpeg'
-import trax from '../public/works/trax.png'
 import social from '../public/works/social-dash.png'
+import trax from '../public/works/trax.png'
 const Works: NextPage = () => {
   return (
     <Container mt={10}>

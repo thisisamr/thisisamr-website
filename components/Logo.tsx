@@ -1,9 +1,8 @@
-import { Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import styled from '@emotion/styled'
+import { useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const LogoBox = styled.span`
+/*const LogoBox = styled.span`
   font-weight: bold;
   font-size: 18px;
   display: inline-flex;
@@ -17,13 +16,19 @@ const LogoBox = styled.span`
   &:hover img {
     transform: rotate(20deg);
   }
-`
+`*/
 const Logo = () => {
   const logosrc = `/images/${useColorModeValue('1.png', '2.png')}`
   return (
     <Link href={'/'}>
       <a>
-        <Image src={logosrc} width={250} height={65} objectFit="contain" />
+        <Image
+          src={logosrc}
+          width={250}
+          height={65}
+          objectFit="contain"
+          alt=""
+        />
       </a>
     </Link>
   )

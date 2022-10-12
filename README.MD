@@ -2,6 +2,8 @@
 
 ## Live Website
 
+[thisisamr.tech](http://localhost:3000/)
+
 ## Stack
 
 - Nextjs
