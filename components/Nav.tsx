@@ -27,16 +27,17 @@ const LinkItem: FC<{
   path: any
   target?: string
   style?: React.CSSProperties
-}> = ({ href, path, children, style }) => {
+}> = ({ href, path, children, style, target }) => {
   const active = path == href
   const inactiveColor = useColorModeValue('gray.900', 'whiteAlpha.900')
   return (
-    <NextLink href={href as Url}>
+    <NextLink href={href as Url} passHref>
       <Link
         p={2}
         // bg={active ? 'grassTeal' : undefined}
         color={active ? 'gray.500' : inactiveColor}
         style={style}
+        target={target}
       >
         {children}
       </Link>
