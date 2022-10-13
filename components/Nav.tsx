@@ -5,6 +5,7 @@ import Logo from './Logo'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   Box,
+  Button,
   Container,
   Flex,
   Heading,
@@ -100,6 +101,23 @@ const Nav: FC<{ path: string }> = props => {
           >
             <IoLogoGithub />
             <p>Source</p>
+          </LinkItem>
+          <LinkItem
+            path={path}
+            href={'/resume'}
+            style={{ textDecoration: 'none' }}
+          >
+            <Button
+              bg={'transparent'}
+              _hover={{
+                border: '1px',
+                transform: 'scale(1.1)',
+                transition: 'all .2s ease-in-out;',
+              }}
+              size="sm"
+            >
+              Resume
+            </Button>
           </LinkItem>
         </Stack>
         <Box>
