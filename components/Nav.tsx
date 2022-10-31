@@ -62,6 +62,7 @@ const Nav: FC<{ path: string }> = props => {
     >
       <Container
         display="flex"
+        sx={{ flexWrap: 'nowrap' }}
         p={2}
         maxW="container.md"
         flexWrap={'wrap'}
@@ -120,7 +121,7 @@ const Nav: FC<{ path: string }> = props => {
             </Button>
           </LinkItem>
         </Stack>
-        <Box>
+        <Box display={['flex']}>
           <ThemeToggleButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">
@@ -139,6 +140,9 @@ const Nav: FC<{ path: string }> = props => {
                 </NextLink>
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
+                </NextLink>
+                <NextLink href="/resume" passHref>
+                  <MenuItem as={Link}>Resume</MenuItem>
                 </NextLink>
                 <MenuItem
                   as={Link}
