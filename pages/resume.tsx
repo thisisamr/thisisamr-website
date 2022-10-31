@@ -155,7 +155,10 @@ const Resume = () => {
             <HStack>
               <VStack alignItems={'flex-start'}>
                 <HStack justifyContent={'center'}>
-                  <Circle bg={'gray.900'} size={2} />
+                  <Circle
+                    bg={useColorModeValue('gray.900', 'gray.200')}
+                    size={2}
+                  />
                   <Text fontSize={14}>
                     <span style={{ fontWeight: 'bold' }}>M.sc</span>{' '}
                     Transportation & Traffic Simulation
@@ -176,7 +179,10 @@ const Resume = () => {
             <HStack>
               <VStack alignItems={'flex-start'}>
                 <HStack justifyContent={'center'}>
-                  <Circle bg={'gray.900'} size={2} />
+                  <Circle
+                    bg={useColorModeValue('gray.900', 'gray.200')}
+                    size={2}
+                  />
                   <Text fontSize={14}>
                     <span style={{ fontWeight: 'bold' }}>b.sc</span> Civil
                     Engineering
@@ -270,7 +276,7 @@ const Resume = () => {
           <HStack w={'full'}>
             <VStack w={'50%'} spacing={4}>
               <HStack justifyContent={'flex-start'} w={'full'}>
-                <Icon fontSize={24} color={'black'}>
+                <Icon fontSize={24} color={'green.400'}>
                   <FaNodeJs />
                 </Icon>
                 <Text fontSize={8} fontStyle="italic" color={'gray.500'}>
@@ -450,7 +456,10 @@ const Resume = () => {
               ml={4}
             >
               <VStack spacing={0}>
-                <Icon fontSize={24} color={'gray.600'}>
+                <Icon
+                  fontSize={24}
+                  color={useColorModeValue('gray.600', 'gray.200')}
+                >
                   <BsMusicNoteBeamed />
                 </Icon>
                 <Text fontSize={10} fontStyle={'italic'} color="gray.500">
@@ -458,7 +467,10 @@ const Resume = () => {
                 </Text>
               </VStack>
               <VStack spacing={0}>
-                <Icon fontSize={24} color={'gray.600'}>
+                <Icon
+                  fontSize={24}
+                  color={useColorModeValue('gray.600', 'gray.200')}
+                >
                   <GiAirplaneDeparture />
                 </Icon>
                 <Text fontSize={10} fontStyle={'italic'} color="gray.500">
@@ -466,7 +478,10 @@ const Resume = () => {
                 </Text>
               </VStack>
               <VStack spacing={0}>
-                <Icon fontSize={24} color={'gray.600'}>
+                <Icon
+                  fontSize={24}
+                  color={useColorModeValue('gray.600', 'gray.200')}
+                >
                   <HiOutlineBookOpen />
                 </Icon>
                 <Text fontSize={10} fontStyle={'italic'} color="gray.500">
@@ -474,7 +489,10 @@ const Resume = () => {
                 </Text>
               </VStack>
               <VStack spacing={0}>
-                <Icon fontSize={24} color={'gray.600'}>
+                <Icon
+                  fontSize={24}
+                  color={useColorModeValue('gray.600', 'gray.200')}
+                >
                   <IoMdFitness />
                 </Icon>
                 <Text fontSize={10} fontStyle={'italic'} color="gray.500">
@@ -521,7 +539,7 @@ const Resume = () => {
         </Flex>
       </Box>
       {/**right side */}
-      <Box bg={'#ff00000a'} width="100%">
+      <Box bg={useColorModeValue('#ff00000a', '')} width="100%">
         <VStack>
           <HStack justifyContent={'start'} w="100%" px={4} mt={4}>
             <Heading
@@ -536,7 +554,10 @@ const Resume = () => {
           <VStack w="full">
             <VStack w={'full'} alignItems={'flex-start'} p={2}>
               <HStack alignItems={'center'} justifyContent="center">
-                <Circle size={2} bg={'gray.800'} />
+                <Circle
+                  size={2}
+                  bg={useColorModeValue('gray.800', 'gray.200')}
+                />
                 <Text fontSize={14}>Tech Lead/Product consultant</Text>
               </HStack>
               <Text fontSize={12}>
@@ -552,41 +573,68 @@ const Resume = () => {
               >
                 (Tasks/Accomplishments)
               </span>
-              <List spacing={0} fontSize={10} maxW="95%" textAlign={'justify'}>
+              <List
+                spacing={0}
+                fontSize={10}
+                maxW="95%"
+                textAlign={'justify'}
+                color={useColorModeValue('black', 'gray.300')}
+              >
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Leading development teams, providing solutions, code reviews
                   and offshore coordination as well as architecting solutions to
                   use the latest technologies and best practices.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Design and implementation of rest services in node and dontnet
                   core, migrating front-end legacy javascript code and enhancing
                   developer experience.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Design and implemntation of application specific Api
                   <span style={{ fontSize: '8px' }}>s</span> in graphql,
                   enhancing fontend experience and performance by minimizing
                   rest api calls through grapgQL custom wrappers.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Design and develop token based authentication microservices.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Developed a home-grown 🪴 Graphql based database
                   syncronization app using Apollo server , Prisma and NextJS.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Carry out unit and integration tests in node and dotnet core.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Interviewing and hiring junior developers
                 </ListItem>
               </List>
@@ -609,24 +657,42 @@ const Resume = () => {
               >
                 (Tasks/Accomplishments)
               </span>
-              <List spacing={0} fontSize={10} maxW="95%" textAlign={'justify'}>
+              <List
+                spacing={0}
+                fontSize={10}
+                maxW="95%"
+                textAlign={'justify'}
+                color={useColorModeValue('black', 'gray.300')}
+              >
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Leading the development teams for the national spatial data
                   infrastucture project.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Provide public integration webservices to third parties with
                   complete swagger documentation and mock services for testing
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Implementing realtime databases with Graphql subscribtions for
                   specific client neeeds.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Design and implementation of web mapping applications using
                   Hexagon Geospatial technologies, handling and optimizing the
                   visualization of large geospatial datasets using webservices
@@ -654,9 +720,18 @@ const Resume = () => {
               >
                 (Tasks/Accomplishments)
               </span>
-              <List spacing={0} fontSize={10} maxW="95%" textAlign={'justify'}>
+              <List
+                spacing={0}
+                fontSize={10}
+                maxW="95%"
+                textAlign={'justify'}
+                color={useColorModeValue('black', 'gray.300')}
+              >
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Responsible for the developer training programs,responsible
                   for carrying out online and on primise training and workshops
                   for various company clients , trouble shooting deployment
@@ -683,9 +758,18 @@ const Resume = () => {
               >
                 (Tasks/Accomplishments)
               </span>
-              <List spacing={0} fontSize={10} maxW="95%" textAlign={'justify'}>
+              <List
+                spacing={0}
+                fontSize={10}
+                maxW="95%"
+                textAlign={'justify'}
+                color={useColorModeValue('black', 'gray.300')}
+              >
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Tasks include class tutorials in:Transportation Modelling,
                   Taffic theory,Computer Simulation, c++, Plane and Topographic
                   surveying, Geodecy, Airport and Highway design . Tasks also
@@ -712,18 +796,33 @@ const Resume = () => {
               >
                 (Tasks/Accomplishments)
               </span>
-              <List spacing={0} fontSize={10} maxW="95%" textAlign={'justify'}>
+              <List
+                spacing={0}
+                fontSize={10}
+                maxW="95%"
+                textAlign={'justify'}
+                color={useColorModeValue('black', 'gray.300')}
+              >
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Microsimulation modelling and scenario testing of alternative
                   intersection treatments to mitigate Congestion
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Develop regression based models to predict speed and LOS
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Implementing pavement management system through the analysis
                   of 3d point cloud drone and mobile mapping data.
                 </ListItem>
@@ -747,9 +846,18 @@ const Resume = () => {
               >
                 (Tasks/Accomplishments)
               </span>
-              <List spacing={0} fontSize={10} maxW="95%" textAlign={'justify'}>
+              <List
+                spacing={0}
+                fontSize={10}
+                maxW="95%"
+                textAlign={'justify'}
+                color={useColorModeValue('black', 'gray.300')}
+              >
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Automation of 3d analysis and modelling of steel communication
                   towers using python and c++, building a structural analysis
                   reporting system and an inventory system using mysql and c++ .
@@ -775,9 +883,18 @@ const Resume = () => {
               >
                 (Tasks/Accomplishments)
               </span>
-              <List spacing={0} fontSize={10} maxW="95%" textAlign={'justify'}>
+              <List
+                spacing={0}
+                fontSize={10}
+                maxW="95%"
+                textAlign={'justify'}
+                color={useColorModeValue('black', 'gray.300')}
+              >
                 <ListItem>
-                  <ListIcon as={MdCheckCircle} color="black" />
+                  <ListIcon
+                    as={MdCheckCircle}
+                    color={useColorModeValue('gray.800', 'gray.200')}
+                  />
                   Construction supervision , quantity survey, labratory
                   supervision , quality control land survey supervison.
                 </ListItem>
