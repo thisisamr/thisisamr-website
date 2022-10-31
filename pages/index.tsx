@@ -5,6 +5,7 @@ import {
   chakra,
   Container,
   Heading,
+  Image,
   Link,
   useColorModeValue,
   VStack,
@@ -26,14 +27,15 @@ const Home = () => {
         mt={10}
         textAlign="center"
       >
-        Hello I&aposm a full stack developer based in cairo,Egypt!
+        Hello I&apos;m a full stack Engineer based in Cairo
+        <Image display={'inline'} src="/eg.png" alt="" ml={2} mr={1} />
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading variant={'page-title'} fontFamily={'heading'}>
-            Amr Solimann
+            Amr Soliman
           </Heading>
-          <p>This is Amr (Engineer/Developer/Athlete)</p>
+          <p>(Engineer/Developer/Gym rat🏋️)</p>
         </Box>
         <Box
           flexShrink={0}
@@ -65,9 +67,11 @@ const Home = () => {
       <Section delay={0.1}>
         <Heading variant={'section-title'}>Work</Heading>
         <Paragraph>
-          Amr is an Engineer & full-stack developer based in 🇪🇬 Cairo, with a
-          great passion for building software, services, and interesting stuff.
-          When he is not coding he is mostly immersed in music and sports
+          Hey👋 i&apos;m Amr Soliman <br />
+          i&apos;m an Engineer & a full-stack developer based in Egypt, with a
+          great passion for building software, services, and learning new stuff.
+          when i&apos;m not coding, i&apos;m mostly immersed in music and
+          sports.
         </Paragraph>
         <Box display={'flex'} my={4} justifyContent="center">
           <NextLink href={'/works'}>
@@ -99,18 +103,17 @@ const Home = () => {
           }
         </BioSection>
         <BioSection>
-          <BioYear>2016 to 2019</BioYear>
-          <span>Academia days 💪</span>
+          <BioYear>2017 to 2019</BioYear>
           <VStack>
+            <span>
+              Assistant Lecturer in Transportation Engineering,traffic theory
+              and microsimulation.
+            </span>
             <ChackraSpan fontSize={'sm'} color="gray.500">
               &quot;i&apos;m extremetly passionate about teaching and
-              communicating with others.At the end of the day you feel like you
-              have added value, which feels awesome 🤗&quot;
+              communicating with others and at the end of the day you feel like
+              you have added value, which feels awesome 🤗&quot;
             </ChackraSpan>
-            <span>
-              Assistant Lecturer in Transportation Engineering,remote Sensing
-              and geomatics.
-            </span>
           </VStack>
         </BioSection>
         <BioSection>
