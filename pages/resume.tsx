@@ -190,7 +190,7 @@ const Resume = () => {
                 </HStack>
                 <HStack justifyContent={'center'}>
                   <Text ml={4} fontSize={14}>
-                    Fayoum University
+                    Cairo University
                   </Text>
                   <Text fontStyle={'italic'} fontSize={10} color="gray.500">
                     2011, Egypt
