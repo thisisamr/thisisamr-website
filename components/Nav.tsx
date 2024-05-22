@@ -19,27 +19,27 @@ import Logo from './Logo'
 import ThemeToggleButton from './ThemeButton'
 import { ModeToggle } from './ThemeSwitcher'
 
-const LinkItem: FC<{
-  href: Url | String
-  children: string | (JSX.Element | JSX.Element[])
-  path: any
-  target?: string
-  style?: React.CSSProperties
-}> = ({ href, path, children, style }) => {
-  // const active = path == href
+// const LinkItem: FC<{
+//   href: Url | String
+//   children: string | (JSX.Element | JSX.Element[])
+//   path: any
+//   target?: string
+//   style?: React.CSSProperties
+// }> = ({ href, path, children, style }) => {
+//   // const active = path == href
 
-  return (
-    <NextLink href={href as Url} passHref>
-      <a
-        className="p-2 active:text-gray-500"
-        // bg={active ? 'grassTeal' : undefined}
-        style={style}
-      >
-        {children}
-      </a>
-    </NextLink>
-  )
-}
+//   return (
+//     <NextLink href={href as Url} passHref className="p-2 active:text-gray-500">
+//       {/* <a
+//         className="p-2 active:text-gray-500"
+//         // bg={active ? 'grassTeal' : undefined}
+//         style={style}
+//       > */}
+//       {children}
+//       {/* </a> */}
+//     </NextLink>
+//   )
+// }
 
 const Nav: FC<{ path: string }> = props => {
   const { path } = props
@@ -69,30 +69,32 @@ const Nav: FC<{ path: string }> = props => {
     >
       <Container className="flex max-w-2xl p-2 items-center">
         <Logo />
-        <div className="hidden w-full md:w-auto flex-1 md:flex flex-col md:flex-row items-center mt-4 md:mt-0 gap-4">
-          <NextLink href="/posts">
-            <span className=" dark:text-zinc-100 px-4 font-bold transition-colors duration-500 cursor-pointer hover:scale-105 transform ease-in-out py-1 underline-animation">
-              Blog
-            </span>
+        <div className="hidden w-full md:w-auto flex-1 md:flex flex-col md:flex-row justify-center items-center mt-4 md:mt-0 gap-4">
+          <NextLink
+            href="/posts"
+            className=" dark:text-zinc-100 px-4 font-bold transition-colors duration-500 cursor-pointer hover:scale-105 transform ease-in-out py-1 underline-animation"
+          >
+            Blog
           </NextLink>
 
-          <NextLink href="/works">
-            <span className="dark:text-zinc-100 px-4 font-bold transition-colors duration-500 cursor-pointer hover:scale-105 transform ease-in-out py-1 underline-animation">
-              Works
-            </span>
+          <NextLink
+            href="/works"
+            className="dark:text-zinc-100 px-4 font-bold transition-colors duration-500 cursor-pointer hover:scale-105 transform ease-in-out py-1 underline-animation"
+          >
+            Works
           </NextLink>
-          <NextLink href={'/resume'} style={{ textDecoration: 'none' }}>
-            <button className="dark:text-zinc-100 px-4 py-1 hover:scale-105 font-bold transition transform duration-300 underline-animation">
-              Resume
-            </button>
+          <NextLink
+            href={'/resume'}
+            style={{ textDecoration: 'none' }}
+            className="dark:text-zinc-100 px-4 hover:scale-105 font-bold transition transform duration-300 underline-animation"
+          >
+            Resume
           </NextLink>
           <NextLink
             target="_blank"
             href="https://github.com/thisisamr/thisisamr-website"
           >
-            <a className="">
-              <IoLogoGithub className="dark:text-zinc-100 size-6" />
-            </a>
+            <IoLogoGithub className="dark:text-zinc-100 size-6" />
           </NextLink>
         </div>
         <div className="flex gap-1">
@@ -118,7 +120,7 @@ const Nav: FC<{ path: string }> = props => {
                     </DropdownMenuLabel>
                     <DropdownMenuItem className="p-2 cursor-pointer" key={2}>
                       <NextLink href="/" passHref>
-                        <a>About</a>
+                        <span>About</span>
                       </NextLink>
                     </DropdownMenuItem>
                     <DropdownMenuItem

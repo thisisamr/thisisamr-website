@@ -53,7 +53,9 @@ export const WorkGridItem: FC<gridProps> = ({
           <a href={`/works/${id}`} target="_blank">
             <span className="mt-2 text-[18px]">{title}</span>
           </a>
-          <span className="mt-2 text-[14px] text-zinc-300">{children}</span>
+          <span className="mt-2 text-[14px] dark:text-zinc-300">
+            {children}
+          </span>
         </div>
       </NextLink>
     </div>

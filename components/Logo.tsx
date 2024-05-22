@@ -1,4 +1,3 @@
-import { useColorModeValue } from '@chakra-ui/react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -31,15 +30,13 @@ const Logo = () => {
   const logosrc = `/images/${resolvedTheme == 'light' ? '1.png' : '2.png'}`
   return (
     <Link href={'/'}>
-      <a>
-        <Image
-          src={logosrc}
-          width={250}
-          height={65}
-          objectFit="contain"
-          alt=""
-        />
-      </a>
+      <Image
+        src={logosrc}
+        width={200}
+        height={65}
+        className="max-h-[65px]"
+        alt="logo"
+      />
     </Link>
   )
 }

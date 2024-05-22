@@ -1,26 +1,25 @@
-import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { FaPhoneAlt } from 'react-icons/fa'
+import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { IoIosLink } from 'react-icons/io'
 
+import { MdEmail } from 'react-icons/md'
 import {
   Avatar,
-  AvatarImage,
   AvatarFallback,
+  AvatarImage,
 } from '../../@/components/ui/avatar'
-import { MdEmail } from 'react-icons/md'
 
+import NextImage from 'next/image'
 import {
   Tooltip,
-  TooltipTrigger,
   TooltipContent,
   TooltipProvider,
+  TooltipTrigger,
 } from '../../@/components/ui/tooltip'
-import NextImage from 'next/image'
-import { LinkIcon, PhoneIcon } from 'lucide-react'
-import { EmailIcon } from '@chakra-ui/icons'
-import { AiOutlineGithub } from 'react-icons/ai'
-import { useEffect, useState } from 'react'
+
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
+import { AiOutlineGithub } from 'react-icons/ai'
 export default function Contacts() {
   const [mounted, setMounted] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
@@ -110,6 +109,7 @@ export default function Contacts() {
               width={100}
               height={35}
               objectFit="contain"
+              alt="signature-logo"
             />
           </picture>
         </div>
