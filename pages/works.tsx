@@ -1,5 +1,5 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import { NextPage } from 'next'
+import { Container } from '../components/Container'
 import { WorkGridItem } from '../components/GridItem'
 import Section from '../components/Section'
 import Disney from '../public/works/disney.jpg'
@@ -8,11 +8,9 @@ import social from '../public/works/social-dash.png'
 import trax from '../public/works/trax.png'
 const Works: NextPage = () => {
   return (
-    <Container mt={10}>
-      <Heading fontSize={20} mb={4}>
-        Works
-      </Heading>
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+    <Container className="mt-10 md:max-w-xl">
+      <h2 className="text-[24px] mb-4 font-bold">Works</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Section delay={0.5}>
           <WorkGridItem
             id={'disney-clone'}
@@ -41,7 +39,7 @@ const Works: NextPage = () => {
             A public wall made with nesxtjs and prisma.
           </WorkGridItem>
         </Section>
-      </SimpleGrid>
+      </div>
     </Container>
   )
 }

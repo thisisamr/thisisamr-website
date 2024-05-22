@@ -1,7 +1,6 @@
-import NextLink from 'next/link'
-import Image from 'next/image'
-import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
+import Image from 'next/image'
+import NextLink from 'next/link'
 import { FC } from 'react'
 export interface gridProps {
   children: any
@@ -17,8 +16,8 @@ export const GridItem: FC<gridProps> = ({
   thumbnail,
 }) => {
   return (
-    <Box w="100%" display={'flex'} justifyContent="center">
-      <LinkBox cursor={'pointer'}>
+    <div className="w-full flex justify-center">
+      <div className="cursor-pointer">
         <Image
           src={thumbnail}
           alt={title}
@@ -26,12 +25,12 @@ export const GridItem: FC<gridProps> = ({
           loading="lazy"
           className="grid-item-thumbnail"
         />
-        <LinkOverlay href={href} target="_blank">
-          <Text mt={2}>{title}</Text>
-        </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
-      </LinkBox>
-    </Box>
+        <a href={href} target="_blank">
+          <span className="mt-2">{title}</span>
+        </a>
+        <span className="text-[14px]">{children}</span>
+      </div>
+    </div>
   )
 }
 
@@ -42,26 +41,22 @@ export const WorkGridItem: FC<gridProps> = ({
   thumbnail,
 }) => {
   return (
-    <Box w="100%" justifyContent="center" display={'flex'}>
+    <div className="flex w-full justify-center">
       <NextLink href={`/works/${id}`}>
-        <LinkBox cursor={'pointer'}>
+        <div className="cursor-pointer flex flex-col">
           <Image
             src={thumbnail}
             className="grid-item-thumbnail"
             alt={title}
             placeholder="blur"
           />
-          <LinkOverlay href={`/works/${id}`} target="_blank">
-            <Text mt={2} fontSize={20}>
-              {title}
-            </Text>
-          </LinkOverlay>
-          <Text mt={2} fontSize={14}>
-            {children}
-          </Text>
-        </LinkBox>
+          <a href={`/works/${id}`} target="_blank">
+            <span className="mt-2 text-[18px]">{title}</span>
+          </a>
+          <span className="mt-2 text-[14px] text-zinc-300">{children}</span>
+        </div>
       </NextLink>
-    </Box>
+    </div>
   )
 }
 export const GridItemStyle = () => {

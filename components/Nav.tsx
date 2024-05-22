@@ -1,26 +1,23 @@
 import NextLink from 'next/link'
-import { IoLogoGithub } from 'react-icons/io5'
-import Logo from './Logo'
+import { AnimatePresence, motion } from 'framer-motion'
+import { RxHamburgerMenu } from 'react-icons/rx'
 
-import { HamburgerIcon } from '@chakra-ui/icons'
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Heading,
-  IconButton,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Stack,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import React, { FC } from 'react'
+import { useRouter } from 'next/router'
+import React, { FC, useEffect, useState } from 'react'
+import { IoLogoGithub } from 'react-icons/io5'
 import { Url } from 'url'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '../@/components/ui/dropdown-menu'
+import { Container } from './Container'
+import Logo from './Logo'
 import ThemeToggleButton from './ThemeButton'
+import { ModeToggle } from './ThemeSwitcher'
 
 const LinkItem: FC<{
   href: Url | String
@@ -28,102 +25,135 @@ const LinkItem: FC<{
   path: any
   target?: string
   style?: React.CSSProperties
-}> = ({ href, path, children, style, target }) => {
-  const active = path == href
-  const inactiveColor = useColorModeValue('gray.900', 'whiteAlpha.900')
+}> = ({ href, path, children, style }) => {
+  // const active = path == href
+
   return (
     <NextLink href={href as Url} passHref>
-      <Link
-        p={2}
+      <a
+        className="p-2 active:text-gray-500"
         // bg={active ? 'grassTeal' : undefined}
-        color={active ? 'gray.500' : inactiveColor}
         style={style}
-        target={target}
       >
         {children}
-      </Link>
+      </a>
     </NextLink>
   )
 }
 
 const Nav: FC<{ path: string }> = props => {
   const { path } = props
+  const [position, setPosition] = React.useState('bottom')
+  const [open, setOpen] = useState(false)
+  const router = useRouter()
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && open) {
+        setOpen(false)
+      }
+    }
 
+    // Add event listener
+    window.addEventListener('resize', handleResize)
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize()
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('resize', handleResize)
+  }, [open])
   return (
-    <Box
-      position="fixed"
-      as="nav"
-      h={75}
-      w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
-      css={{ backdropFilter: 'blur(10px)' }}
-      zIndex={2}
+    <nav
+      className="fixed h-[75px] w-full z-10 backdrop-blur-md dark:bg-[#20202380] text-center"
       {...props}
     >
-      <Container
-        display="flex"
-        sx={{ flexWrap: 'nowrap' }}
-        p={2}
-        maxW="container.md"
-        flexWrap={'wrap'}
-        alignItems={'center'}
-        justifyContent="space-between"
-      >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <Logo />
-          </Heading>
-        </Flex>
+      <Container className="flex max-w-2xl p-2 items-center">
+        <Logo />
+        <div className="hidden w-full md:w-auto flex-1 md:flex flex-col md:flex-row items-center mt-4 md:mt-0 gap-4">
+          <NextLink href="/posts">
+            <span className=" dark:text-zinc-100 px-4 font-bold transition-colors duration-500 cursor-pointer hover:scale-105 transform ease-in-out py-1 underline-animation">
+              Blog
+            </span>
+          </NextLink>
 
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          display={{ base: 'none', md: 'flex' }}
-          width={{ base: 'full', md: 'auto' }}
-          alignItems="center"
-          flexGrow={1}
-          mt={{ base: 4, md: 0 }}
-        >
-          <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
-          <LinkItem
+          <NextLink href="/works">
+            <span className="dark:text-zinc-100 px-4 font-bold transition-colors duration-500 cursor-pointer hover:scale-105 transform ease-in-out py-1 underline-animation">
+              Works
+            </span>
+          </NextLink>
+          <NextLink href={'/resume'} style={{ textDecoration: 'none' }}>
+            <button className="dark:text-zinc-100 px-4 py-1 hover:scale-105 font-bold transition transform duration-300 underline-animation">
+              Resume
+            </button>
+          </NextLink>
+          <NextLink
             target="_blank"
             href="https://github.com/thisisamr/thisisamr-website"
-            path={path}
-            style={{
-              gap: 4,
-              display: 'inline-flex',
-              alignItems: 'center',
-              paddingLeft: 2,
-            }}
           >
-            <IoLogoGithub />
-            <p>Source</p>
-          </LinkItem>
-          <LinkItem
-            path={path}
-            href={'/resume'}
-            style={{ textDecoration: 'none' }}
-          >
-            <Button
-              bg={'transparent'}
-              _hover={{
-                border: '1px',
-                transform: 'scale(1.1)',
-                transition: 'all .2s ease-in-out;',
-              }}
-              size="sm"
-            >
-              Resume
-            </Button>
-          </LinkItem>
-        </Stack>
-        <Box display={['flex']}>
-          <ThemeToggleButton />
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+            <a className="">
+              <IoLogoGithub className="dark:text-zinc-100 size-6" />
+            </a>
+          </NextLink>
+        </div>
+        <div className="flex gap-1">
+          {/* <ThemeToggleButton /> */}
+          <ModeToggle />
+          <DropdownMenu modal={false} open={open} onOpenChange={setOpen}>
+            <DropdownMenuTrigger>
+              <div className="md:hidden w-[40px] h-[40px] border p-1 rounded-sm m-auto flex justify-center items-center cursor-pointer hover:border-zinc-200/50 transition-color duration-300">
+                <RxHamburgerMenu size={20} className="dark:text-white" />
+              </div>
+            </DropdownMenuTrigger>
+
+            <AnimatePresence>
+              {open && (
+                <DropdownMenuContent className="mt-2 mr-1  space-y-1 bg-black/95 w-52">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 1 }}
+                  >
+                    <DropdownMenuLabel className="italic text-center " key={1}>
+                      thisisamr.site
+                    </DropdownMenuLabel>
+                    <DropdownMenuItem className="p-2 cursor-pointer" key={2}>
+                      <NextLink href="/" passHref>
+                        <a>About</a>
+                      </NextLink>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => router.push('/blog')}
+                      className="p-2"
+                      key={3}
+                    >
+                      Blog
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => router.push('/works')}
+                      className="p-2"
+                      key={4}
+                    >
+                      Works
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="p-2"
+                      onClick={() => router.push('/resume')}
+                    >
+                      Resume
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator className="border m-2" key={5} />
+                    <DropdownMenuItem className="p-2" key={6}>
+                      <a
+                        href="https://github.com/thisisamr/thisisamr-website"
+                        target="_blank"
+                      ></a>
+                    </DropdownMenuItem>
+                  </motion.div>
+                </DropdownMenuContent>
+              )}
+            </AnimatePresence>
+          </DropdownMenu>
+          {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
@@ -152,10 +182,10 @@ const Nav: FC<{ path: string }> = props => {
                 </MenuItem>
               </MenuList>
             </Menu>
-          </Box>
-        </Box>
+          </Box> */}
+        </div>
       </Container>
-    </Box>
+    </nav>
   )
 }
 

@@ -1,6 +1,8 @@
 import { useColorModeValue } from '@chakra-ui/react'
+import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 /*const LogoBox = styled.span`
   font-weight: bold;
@@ -18,7 +20,15 @@ import Link from 'next/link'
   }
 `*/
 const Logo = () => {
-  const logosrc = `/images/${useColorModeValue('1.png', '2.png')}`
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  if (!mounted) {
+    return null
+  }
+  const logosrc = `/images/${resolvedTheme == 'light' ? '1.png' : '2.png'}`
   return (
     <Link href={'/'}>
       <a>
