@@ -1,13 +1,11 @@
+import { useRouter } from 'next/router'
 import { MdCheckCircle } from 'react-icons/md'
 import {
   Card,
   CardContent,
   CardDescription,
-  CardHeader,
-  CardFooter,
-  CardTitle,
+  CardTitle
 } from '../../@/components/ui/card'
-import { useRouter } from 'next/router'
 import { Job } from './data'
 export default function Experience({ job }: { job: Job }) {
   const router = useRouter()
@@ -43,15 +41,6 @@ export default function Experience({ job }: { job: Job }) {
     </div>
   )
 }
-const tasks = [
-  'Leading development teams, providing solutions, code reviews and offshore coordination as well as architecting solutions to use the latest technologies and best practices.',
-  'Design and implementation of rest services in node and dontnet core, migrating front-end legacy javascript code and enhancing developer experience.',
-  'Design and implemntation of application specific Apis in graphql, enhancing fontend experience and performance by minimizing rest api calls through grapgQL custom wrappers',
-  'Design and develop token based authentication microservices.',
-  'Developed a home-grown 🪴 Graphql based database syncronization app using Apollo server , Prisma and NextJS.',
-  'Carry out unit and integration tests in node and dotnet core.',
-  'Interviewing and hiring junior developers',
-]
 const ListItem = ({ task }: { task: string }) => {
   return (
     <li className="flex gap-2 items-start">

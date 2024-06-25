@@ -31,6 +31,8 @@ const Logo = () => {
   return (
     <Link href={'/'}>
       <Image
+        priority
+      fetchPriority='high'
         src={logosrc}
         width={200}
         height={65}

@@ -1,18 +1,13 @@
 import { IconType } from 'react-icons'
-import { DiMongodb } from 'react-icons/di'
 import { FaNodeJs } from 'react-icons/fa'
 import {
   SiActix,
   SiApollographql,
   SiExpress,
-  SiGraphql,
-  SiNeo4J,
   SiNestjs,
   SiPostgresql,
   SiPrisma,
-  SiReact,
-  SiRedis,
-  SiTrpc,
+  SiRedis
 } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb'
 
@@ -81,9 +76,6 @@ const ChilliCreamIcon = () => (
     </svg>
   </svg>
 )
-const axticIcon = () => {
-  return <img src="/actix.png" alt="actix web" className="size-6" />
-}
 
 // Custom Icon for Dotnet Core
 const DotnetCoreIcon = () => (

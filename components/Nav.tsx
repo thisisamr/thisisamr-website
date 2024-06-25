@@ -1,11 +1,10 @@
-import NextLink from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
+import NextLink from 'next/link'
 import { RxHamburgerMenu } from 'react-icons/rx'
 
 import { useRouter } from 'next/router'
 import React, { FC, useEffect, useState } from 'react'
 import { IoLogoGithub } from 'react-icons/io5'
-import { Url } from 'url'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +15,6 @@ import {
 } from '../@/components/ui/dropdown-menu'
 import { Container } from './Container'
 import Logo from './Logo'
-import ThemeToggleButton from './ThemeButton'
 import { ModeToggle } from './ThemeSwitcher'
 
 // const LinkItem: FC<{
@@ -42,8 +40,6 @@ import { ModeToggle } from './ThemeSwitcher'
 // }
 
 const Nav: FC<{ path: string }> = props => {
-  const { path } = props
-  const [position, setPosition] = React.useState('bottom')
   const [open, setOpen] = useState(false)
   const router = useRouter()
   useEffect(() => {
@@ -93,6 +89,7 @@ const Nav: FC<{ path: string }> = props => {
           <NextLink
             target="_blank"
             href="https://github.com/thisisamr/thisisamr-website"
+            rel='nonreferrer'
           >
             <IoLogoGithub className="dark:text-zinc-100 size-6" />
           </NextLink>
@@ -125,30 +122,33 @@ const Nav: FC<{ path: string }> = props => {
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => router.push('/blog')}
-                      className="p-2"
+                      className="p-2 cursor-pointer"
                       key={3}
                     >
                       Blog
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => router.push('/works')}
-                      className="p-2"
+                      className="p-2 cursor-pointer"
                       key={4}
                     >
                       Works
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      className="p-2"
+                      className="p-2 cursor-pointer"
                       onClick={() => router.push('/resume')}
                     >
                       Resume
                     </DropdownMenuItem>
-                    <DropdownMenuSeparator className="border m-2" key={5} />
-                    <DropdownMenuItem className="p-2" key={6}>
+                    <DropdownMenuSeparator className="border" key={5} />
+                    <DropdownMenuItem className="p-2 justify-center" key={6}>
                       <a
                         href="https://github.com/thisisamr/thisisamr-website"
                         target="_blank"
-                      ></a>
+                        rel='noreferrer'
+                      >
+                      <IoLogoGithub className="dark:text-zinc-100 size-6" />
+                      </a>
                     </DropdownMenuItem>
                   </motion.div>
                 </DropdownMenuContent>

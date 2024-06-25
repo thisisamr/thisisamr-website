@@ -74,11 +74,11 @@ const Home = () => {
               Microsimulation.
               <br />
               <span className="font-thin dark:text-zinc-500 text-sm block text-justify">
-                "I love teaching 🤗 because it forces you to distill your
+                I love teaching 🤗 because it forces you to distill your
                 knowledge into something crystal that you can explain to
                 someone, and it forces you to acknowledge the gaps in your
                 knowledge. For me to truly master something I must teach it to
-                someone else"
+                someone else
               </span>
             </span>
             {/* <ChackraSpan fontSize={'sm'} color="gray.500">

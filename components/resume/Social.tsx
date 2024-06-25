@@ -1,7 +1,6 @@
-import { AiFillLinkedin, AiOutlineInstagram } from 'react-icons/ai'
+import { AiOutlineInstagram } from 'react-icons/ai'
 import { FaFacebookF } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import { IoLogoLinkedin } from 'react-icons/io5'
 import { SiLinkedin } from 'react-icons/si'
 
 export default function Social() {
@@ -17,6 +16,7 @@ export default function Social() {
         className="p-2"
         href="https://facebook.com/amr.soliman.520125"
         target={'_blank'}
+        rel='noreferrer'
       >
         <FaFacebookF className="text-blue-400" fontSize={16} />
       </a>

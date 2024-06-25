@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { Container, containerVariants } from '../Container'
-import { Box } from '@chakra-ui/react'
 import { FC } from 'react'
 import { Props } from '../../types'
+import { Container } from '../Container'
 import Nav from '../Nav'
 const Main: FC<Props> = ({ children, router }) => {
   return (

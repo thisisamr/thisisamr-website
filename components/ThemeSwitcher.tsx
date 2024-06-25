@@ -1,7 +1,8 @@
-import * as React from 'react'
-import { Moon, Sun } from 'lucide-react'
+import { Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
+import { useEffect, useState } from 'react'
+import { RxMoon } from 'react-icons/rx'
 import { Button } from '../@/components/ui/button'
 import {
   DropdownMenu,
@@ -9,8 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../@/components/ui/dropdown-menu'
-import { RxMoon } from 'react-icons/rx'
-import { useEffect, useState } from 'react'
 
 export function ModeToggle() {
   const { setTheme, resolvedTheme } = useTheme()

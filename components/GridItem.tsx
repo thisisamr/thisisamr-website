@@ -25,7 +25,7 @@ export const GridItem: FC<gridProps> = ({
           loading="lazy"
           className="grid-item-thumbnail"
         />
-        <a href={href} target="_blank">
+        <a href={href} target="_blank" rel='noreferrer'>
           <span className="mt-2">{title}</span>
         </a>
         <span className="text-[14px]">{children}</span>
@@ -50,7 +50,7 @@ export const WorkGridItem: FC<gridProps> = ({
             alt={title}
             placeholder="blur"
           />
-          <a href={`/works/${id}`} target="_blank">
+          <a href={`/works/${id}`} target="_blank" rel='noreferrer'>
             <span className="mt-2 text-[18px]">{title}</span>
           </a>
           <span className="mt-2 text-[14px] dark:text-zinc-300">

@@ -22,7 +22,7 @@ import { useEffect, useState } from 'react'
 import { AiOutlineGithub } from 'react-icons/ai'
 export default function Contacts() {
   const [mounted, setMounted] = useState(false)
-  const { resolvedTheme, setTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
   useEffect(() => {
     setMounted(true)
   }, [])
