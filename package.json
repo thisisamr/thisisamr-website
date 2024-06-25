@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev -H 0.0.0.0",
+    "start": "next start",
     "build": "next build",
     "prettier": "prettier -write .",
     "lint": "next lint"
@@ -24,7 +25,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^7.2.1",
     "lucide-react": "^0.378.0",
-    "next": "^14.2.3",
+    "next": "^14.2.4",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
