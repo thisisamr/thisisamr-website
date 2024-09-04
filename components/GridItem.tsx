@@ -50,9 +50,7 @@ export const WorkGridItem: FC<gridProps> = ({
             alt={title}
             placeholder="blur"
           />
-          <a href={`/works/${id}`} target="_blank" rel='noreferrer'>
-            <span className="mt-2 text-[18px]">{title}</span>
-          </a>
+          <span className="mt-2 text-[18px]">{title}</span>
           <span className="mt-2 text-[14px] dark:text-zinc-300">
             {children}
           </span>
