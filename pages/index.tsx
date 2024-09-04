@@ -74,7 +74,7 @@ const Home = () => {
               Asst.Lecturer of Transportation Engineering, Traffic theory, and
               Microsimulation.
               <br />
-              <span className="font-thin dark:text-zinc-500 text-sm block text-justify">
+              <span className="text-zinc-700 tracking-wide dark:text-zinc-300  text-sm block text-justify mt-2 mb-2">
                 I love teaching 🤗 because it forces you to distill your
                 knowledge into something crystal that you can explain to
                 someone, and it forces you to acknowledge the gaps in your
