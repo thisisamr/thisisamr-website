@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import NextLink from 'next/link'
 import { MdChevronRight } from 'react-icons/md'
 import { Button } from '../@/components/ui/button'
