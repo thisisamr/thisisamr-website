@@ -2,12 +2,14 @@ import { Global } from '@emotion/react'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { FC } from 'react'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 export interface gridProps {
   children: any
   id?: any
   href?: any
   title: any
   thumbnail: any
+  link: any
 }
 export const GridItem: FC<gridProps> = ({
   children,
@@ -39,23 +41,27 @@ export const WorkGridItem: FC<gridProps> = ({
   id,
   title,
   thumbnail,
+  link
 }) => {
   return (
     <div className="flex w-full justify-center">
-      <NextLink href={`/works/${id}`}>
-        <div className="cursor-pointer flex flex-col">
-          <Image
-            src={thumbnail}
-            className="grid-item-thumbnail"
-            alt={title}
-            placeholder="blur"
-          />
+      <div className="cursor-pointer flex flex-col">
+        <Image
+          src={thumbnail}
+          className="grid-item-thumbnail"
+          alt={title}
+          placeholder="blur"
+        />
+        <div className="flex items-center  gap-2 ">
           <span className="mt-2 text-[18px]">{title}</span>
-          <span className="mt-2 text-[14px] dark:text-zinc-300">
-            {children}
-          </span>
+          <a className=' mt-2 flex gap-4' href={link} target="_blank" rel="noreferrer">
+            <FaExternalLinkAlt className="text-xs text-blue-500 cursor-pointer" />
+          </a>
         </div>
-      </NextLink>
+        <span className="mt-2 text-[14px] dark:text-zinc-300">
+          {children}
+        </span>
+      </div>
     </div>
   )
 }
