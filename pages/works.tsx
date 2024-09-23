@@ -5,7 +5,6 @@ import Section from '../components/Section'
 import Disney from '../public/works/disney.jpg'
 import Hulu from '../public/works/hulu_2.jpeg'
 import social from '../public/works/social-dash.png'
-import trax from '../public/works/trax.png'
 import tiny from '../public/works/tiny-trail-banner.jpg'
 let works = [
   {
@@ -25,13 +24,6 @@ let works = [
     title: 'Hulu clone',
     thumb: Hulu,
     description: 'A clone of Hulu website',
-  },
-  {
-    id: 'trax',
-    title: 'Trax',
-    thumb: trax,
-    description:
-      'A modern music app inspired by Spotify and build with Nextjs and Prisma',
   },
   {
     id: 'social-dash',
