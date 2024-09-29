@@ -1,6 +1,5 @@
 import { Global } from '@emotion/react'
 import Image from 'next/image'
-import NextLink from 'next/link'
 import { FC } from 'react'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 export interface gridProps {
@@ -38,7 +37,6 @@ export const GridItem: FC<gridProps> = ({
 
 export const WorkGridItem: FC<gridProps> = ({
   children,
-  id,
   title,
   thumbnail,
   link
