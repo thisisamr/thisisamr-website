@@ -9,7 +9,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '../@/components/ui/dropdown-menu'
@@ -17,27 +16,6 @@ import { Container } from './Container'
 import Logo from './Logo'
 import { ModeToggle } from './ThemeSwitcher'
 
-// const LinkItem: FC<{
-//   href: Url | String
-//   children: string | (JSX.Element | JSX.Element[])
-//   path: any
-//   target?: string
-//   style?: React.CSSProperties
-// }> = ({ href, path, children, style }) => {
-//   // const active = path == href
-
-//   return (
-//     <NextLink href={href as Url} passHref className="p-2 active:text-gray-500">
-//       {/* <a
-//         className="p-2 active:text-gray-500"
-//         // bg={active ? 'grassTeal' : undefined}
-//         style={style}
-//       > */}
-//       {children}
-//       {/* </a> */}
-//     </NextLink>
-//   )
-// }
 
 const Nav: FC<{ path: string }> = props => {
   const [open, setOpen] = useState(false)
@@ -106,48 +84,31 @@ const Nav: FC<{ path: string }> = props => {
 
             <AnimatePresence>
               {open && (
-                <DropdownMenuContent className="mt-2 mr-1  space-y-1 bg-black/95 w-52">
+                <DropdownMenuContent className="mt-2 mr-1 space-y-1 dark:bg-black/95 bg-white/95 w-52">
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 1 }}
                   >
-                    <DropdownMenuLabel className="italic text-center " key={1}>
-                      thisisamr.site
-                    </DropdownMenuLabel>
-                    <DropdownMenuItem className="p-2 cursor-pointer" key={2}>
-                      <NextLink href="/" passHref>
-                        <span>About</span>
-                      </NextLink>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={() => router.push('/blog')}
-                      className="p-2 cursor-pointer"
-                      key={3}
-                    >
-                      Blog
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={() => router.push('/works')}
-                      className="p-2 cursor-pointer"
-                      key={4}
-                    >
-                      Works
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      className="p-2 cursor-pointer"
-                      onClick={() => router.push('/resume')}
-                    >
-                      Resume
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator className="border" key={5} />
+                    {menuItems.map((item, i) => {
+                      return (
+                        <DropdownMenuItem
+                          onClick={() => router.push(`/${item.url}`)}
+                          className=" outline-none dark:hover:bg-[#1e1e1e]/70 hover:bg-gray-200 transition-colors  ease-in-out p-2 cursor-pointer"
+                          key={i}
+                        >
+                          {item.name}
+                        </DropdownMenuItem>
+                      )
+                    })}
+                    <DropdownMenuSeparator className="border mt-1" key={5} />
                     <DropdownMenuItem className="p-2 justify-center" key={6}>
                       <a
                         href="https://github.com/thisisamr/thisisamr-website"
                         target="_blank"
                         rel='noreferrer'
                       >
-                      <IoLogoGithub className="dark:text-zinc-100 size-6" />
+                        <IoLogoGithub className="dark:text-zinc-100 size-6" />
                       </a>
                     </DropdownMenuItem>
                   </motion.div>
@@ -155,40 +116,11 @@ const Nav: FC<{ path: string }> = props => {
               )}
             </AnimatePresence>
           </DropdownMenu>
-          {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazy id="navbar-menu">
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="outline"
-                aria-label="Options"
-              />
-              <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
-                </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
-                </NextLink>
-                <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
-                </NextLink>
-                <NextLink href="/resume" passHref>
-                  <MenuItem as={Link}>Resume</MenuItem>
-                </NextLink>
-                <MenuItem
-                  as={Link}
-                  href="https://github.com/thisisamr/thisisamr-website"
-                >
-                  View Source
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </Box> */}
         </div>
       </Container>
     </nav>
   )
 }
+const menuItems = [{ name: 'About', url: '/' }, { name: 'Works', url: "/works" }, { name: 'Blog', url: "/blog" }, { name: 'Resume', url: '/resume' }]
 
 export default Nav
