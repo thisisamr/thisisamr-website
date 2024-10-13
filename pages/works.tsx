@@ -9,6 +9,7 @@ import social from '../public/works/social-dash.png'
 import issue from '../public/works/issue-tracker.png'
 import tiny from '../public/works/tiny-trail-banner.jpg'
 import animeplanet from '../public/works/anime.png'
+import sysWatch from '../public/works/SysWatch.png'
 let works = [
   {
     id: 'tiny-trail',
@@ -16,6 +17,13 @@ let works = [
     thumb: tiny,
     description: 'A fast url shortener made with Go and Redis',
     link: "https://github.com/thisisamr/tiny-trail"
+  },
+  {
+    id: 'sys-watch',
+    title: 'SysWatch',
+    thumb: sysWatch,
+    description: 'A system monitoring app built with Go.',
+    link: "https://github.com/thisisamr/SysWatch"
   },
   {
     id: 'disney-clone',
