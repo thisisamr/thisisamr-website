@@ -15,7 +15,7 @@ const tech_lead_product_consultant = {
 
 const tech_lead = {
   title: 'Tech Lead',
-  Employer: 'Edge-pro for information systems',
+  Employer: 'Ministry Of Planning',
   period: '2020-2021',
   tasks: [
     'Leading the development teams for the national spatial data infrastucture project.',
@@ -27,7 +27,7 @@ const tech_lead = {
 
 const training_manager = {
   title: 'Training & Customer support manager',
-  Employer: 'Edge-pro for information systems',
+  Employer: 'Edge-pro for information systems (Hexagon Geospatial Partner, Egypt)',
   period: '2019-2020',
   tasks: [
     'Responsible for the developer training programs,responsible for carrying out online and on primise training and workshops for various company clients , trouble shooting deployment issues and system integeration problems',
@@ -39,7 +39,7 @@ const assistant_lecturer = {
   Employer: 'Obour Higher Institutes For Engineering and Technology.',
   period: '2017-2019',
   tasks: [
-    'Class tutorials in:Transportation Modelling, Taffic theory,Computer Simulation, c++, Plane and Topographic surveying, Geodecy, Airport and Highway design . Tasks also included tutorials in Autodesk CIVIL-3d ,Bently Microstation,Terra Solid and PTV Vissim.',
+    'Class tutorials in:Transportation Modelling, Taffic theory,Computer Simulation, c++, Plane and Topographic surveying, Geodecy, Airport and Highway design . Tasks also included Labs in Autodesk CIVIL-3d ,Bently Microstation,Terra Solid and PTV Vissim.',
   ],
 }
 
@@ -55,11 +55,11 @@ const Transportation_engineer = {
 }
 
 const Technical_support_Engineer = {
-  title: 'Technical support Engineer',
+  title: 'Technical Support Engineer',
   Employer: 'Ericsson for Telecomunication',
   period: '2012-2013',
   tasks: [
-    'Automation of 3d analysis and modelling of steel communication towers using python and c++, building a structural analysis reporting system and an inventory system using mysql and c++ .',
+    'Automated 3D structural analysis and modelling of steel communication towers using c++, building a structural analysis reporting system and an inventory system using mysql and Java.',
   ],
 }
 const Highway_Consultant_Engineer = {
@@ -67,7 +67,7 @@ const Highway_Consultant_Engineer = {
   Employer: 'Centre Of Research and Engineering Consultancy,Fayoum University.',
   period: '2011-2012',
   tasks: [
-    'Construction supervision , quantity survey, labratory supervision , quality control land survey supervison.',
+    'Construction supervision , quantity survey, labratory supervision , quality control and land surveying.',
   ],
 }
 
